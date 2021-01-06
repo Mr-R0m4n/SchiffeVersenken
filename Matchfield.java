@@ -1,27 +1,32 @@
 package SchiffeVersenken;
 
+import java.util.Scanner;
 
 public class Matchfield{
     //Attributes
-        private int fields;
-        private final char[][] matchField = new char[fields][fields];
+        private char[][] matchField;
     //Constructors
-        public Matchfield(int fields){
-            this.fields = fields;
-    }
+
     //Methods
+        public void setMatchFieldSize(){
+            Scanner scSize = new Scanner(System.in);
+            int size = scSize.nextInt();
+            char[][] Matchfieldsize = new char[size][size];
+            this.matchField = Matchfieldsize;
+        }
+
         public void createMatchfield(){
-            for (int i1 = 0; i1 < this.matchField.length; i1++){
-                for (int i2 = 0; i2 < this.matchField[i1].length; i2++){
-                    this.matchField[i1][i2] = '~';
+            for (int i = 0; i < this.matchField.length; i++) {
+                for (int j = 0; j < this.matchField[i].length; j++) {
+                    this.matchField[i][j] = '~';
                 }
             }
         }
 
         public void printMatchfield(){
-            for (char[] fieldX : this.matchField) {
-                for (char fieldY : fieldX) {
-                    System.out.println(fieldY);
+            for (int i = 0; i < this.matchField.length; i++) {
+                for (int j = 0; j < this.matchField[i].length; j++) {
+                    System.out.print(this.matchField[i][j]);
                 }
                 System.out.println();
             }
@@ -30,4 +35,6 @@ public class Matchfield{
     //Exceptions
 
     //Getters&Setters
+
 }
+
