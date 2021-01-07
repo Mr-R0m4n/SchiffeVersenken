@@ -16,6 +16,7 @@ public class Matchfield{
         }
 
         public void createMatchfield(){
+            //System.out.println("ABCDE");
             for (int i = 0; i < this.matchField.length; i++) {
                 for (int j = 0; j < this.matchField[i].length; j++) {
                     this.matchField[i][j] = '~';
