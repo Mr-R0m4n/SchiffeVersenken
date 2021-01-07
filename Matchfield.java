@@ -1,6 +1,5 @@
 package SchiffeVersenken;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Matchfield{
@@ -18,11 +17,8 @@ public class Matchfield{
                 System.out.println("Ungültige Eingabe!");
                 System.out.println();
             }
-            char[][] Matchfieldsize = new char[size][size];
-            this.matchField = Matchfieldsize;
-
-            int[] matchfieldIndex = new int[size];
-            this.matchfieldIndex = matchfieldIndex;
+            this.matchField = new char[size][size];
+            this.matchfieldIndex = new int[size];
         }
 
         public void createMatchfield(){
