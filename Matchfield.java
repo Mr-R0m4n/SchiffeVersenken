@@ -42,7 +42,7 @@ public class Matchfield{
         }
 
         public void printMatchfield(){
-            //Print Matchfield
+            //Print matchfield
             System.out.print(" ");
             char[] letters = new char[this.matchfieldIndex.length];
             for (int im = 0; im < this.matchfieldIndex.length; im++) {
@@ -61,7 +61,7 @@ public class Matchfield{
         public int randomNumber() {
             //Generate random number
             int min = 0;
-            int max = (this.size-1);
+            int max = ((this.size*this.size)-1);
             Random random = new Random();
             int randomInt = random.nextInt((max - min) + 1) + min;
             return randomInt;

@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        //Spielfeld
         Matchfield matchfield = new Matchfield();
         Ships ships = new Ships();
         Player player = new Player();
@@ -27,11 +26,11 @@ public class Main {
                 case 1 -> {
                     System.out.println();
                     System.out.println("Bitte geben Sie eine größe (1 - 9) für das Spielfeld ein: ");
-                    //Spielfeldgröße festlegen
+                    //Set matchfieldsize
                     matchfield.setMatchFieldSize(scMenu.nextInt());
                     System.out.println();
                     System.out.println("Wieviele Schiffe sollen auf dem Spielfeld generiert werden?");
-                    System.out.println("         Wählen Sie eine Zahl zwischen 1 und " + ((matchfield.getSize() * matchfield.getSize())-1));
+                    System.out.println("         Wählen Sie eine Zahl zwischen 1 und " + matchfield.getSize());
                     //Set number of ships
                     ships.setNumberOfShips(scMenu.nextInt(), matchfield);
                     System.out.println();
@@ -46,12 +45,13 @@ public class Main {
                     }
                     else {
                         System.out.println();
-                        //Spielfeld erstellen
+                        //generate matchfield
                         matchfield.createMatchfield();
-                        //Spielfeld darstellen
+                        //print matchfield
                         matchfield.printMatchfield();
                         System.out.println();
                         player.insertIndex();
+                        ships.compareShipPositionWithInsertIndex(player);
                     }
                 }
                 case 3 -> {
