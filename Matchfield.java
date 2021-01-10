@@ -39,18 +39,19 @@ public class Matchfield{
         }
 
     //Getters&Setters
-    public int[] getMatchfieldIndex() {
+        public int[] getMatchfieldIndex() {
         return matchfieldIndex;
     }
 
-    public void setMatchFieldSize(int size){
-        this.size = size;
-        this.matchField = new char[size][size];
-        this.matchfieldIndex = new int[size];
-    }
+        public void setMatchFieldSize(int size){
+            this.size = size;
+            this.matchField = new char[size][size];
+            this.matchfieldIndex = new int[size];
 
-    public int getSize() {
-        return this.size;
-    }
+        }
+
+        public int getSize() {
+            return this.size;
+        }
 }
 

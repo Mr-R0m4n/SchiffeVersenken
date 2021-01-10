@@ -4,28 +4,21 @@ import java.util.Scanner;
 
 public class Player {
     //Attributes
-    private int indexHorizontal;
-    private int indexVertical;
-
     //Constructors
     //Methods
     public void insertIndex() {
+        int indexHorizontal;
+        int indexVertical;
         Scanner scCoordinates = new Scanner(System.in);
         System.out.println();
         System.out.println("Bitte geben Sie die Koordinaten für ein Feld ein: ");
         System.out.println("1. Horizontale Koordinate: ");
-        this.indexHorizontal = scCoordinates.nextInt();
+        indexHorizontal = scCoordinates.nextInt();
         System.out.println("2. Vertikale Koordinate: ");
-        this.indexVertical = scCoordinates.nextInt();
-        System.out.print(this.indexHorizontal);
-        System.out.println(this.indexVertical);
+        indexVertical = scCoordinates.nextInt();
+        int playerCoordinates = Integer.parseInt(indexHorizontal + "" + indexVertical);
+        System.out.println(playerCoordinates);
     }
     //Getter&Setter
-    public int getIndexHorizontal() {
-        return indexHorizontal;
-    }
 
-    public int getIndexVertical() {
-        return indexVertical;
-    }
 }

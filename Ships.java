@@ -12,15 +12,15 @@ public class Ships {
         //Set ships
     public void setShips(Matchfield matchfield){
         Random random = new Random();
-        ArrayList<Integer> shipPosition = new ArrayList<Integer>();
+        ArrayList<Integer> shipPosition = new ArrayList<>();
         while(shipPosition.size() < this.numberOfShips) {
             int a = random.nextInt(matchfield.getSize()*matchfield.getSize());
             if(!shipPosition.contains(a)){
                 shipPosition.add(a);
             }
         }
-        for (int i = 0; i < shipPosition.size(); i++){
-            System.out.println(shipPosition.get(i));
+        for (Integer integer : shipPosition) {
+            System.out.println(integer);
         }
     }
 
@@ -31,6 +31,8 @@ public class Ships {
             System.out.println("Ungültige Eingabe!");
             System.out.println();
         }
-        this.numberOfShips = numberOfShips;
+        else {
+            this.numberOfShips = numberOfShips;
+        }
     }
 }
