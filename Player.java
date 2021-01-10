@@ -1,7 +1,6 @@
 package SchiffeVersenken;
 
 import java.util.Scanner;
-import java.lang.Character;
 
 public class Player {
     //Attributes

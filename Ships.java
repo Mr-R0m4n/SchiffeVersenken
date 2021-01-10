@@ -15,8 +15,8 @@ public class Ships {
         }
 
         //Print ship positions
-        for (int i = 0; i < shipPosition.length; i++) {
-            System.out.print(this.shipPosition[i]);
+        for (int j : shipPosition) {
+            System.out.print(j);
         }
         System.out.println();
 

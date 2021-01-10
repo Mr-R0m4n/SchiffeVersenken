@@ -1,5 +1,7 @@
 package SchiffeVersenken;
 
+import java.util.Arrays;
+
 public class Matchfield{
     //Attributes
         private char[][] matchField;
@@ -10,22 +12,20 @@ public class Matchfield{
     //Methods
         public void createMatchfield(){
             //Write matchfield index
-            for (int im = 0; im < this.matchfieldIndex.length; im++) {
-                this.matchfieldIndex[im] = im+1;
+            for (int i = 0; i < this.matchfieldIndex.length; i++) {
+                this.matchfieldIndex[i] = i+1;
             }
             //Write matchfield field
-            for (int i = 0; i < this.matchField.length; i++) {
-                for (int j = 0; j < this.matchField[i].length; j++) {
-                    this.matchField[i][j] = '~';
-                }
+            for (char[] chars : this.matchField) {
+                Arrays.fill(chars, '~');
             }
         }
 
         public void printMatchfield(){
             //Print matchfield
             System.out.print("  ");
-            for (int i = 0; i < this.matchfieldIndex.length; i++) {
-                System.out.print(this.matchfieldIndex[i] + " ");
+            for (int index : this.matchfieldIndex) {
+                System.out.print(index + " ");
             }
             System.out.println();
             for (int i = 0; i < this.matchField.length; i++) {
