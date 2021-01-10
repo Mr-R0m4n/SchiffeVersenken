@@ -6,6 +6,7 @@ public class Matchfield{
     //Attributes
         private char[][] matchField;
         private int[] matchfieldIndex;
+        private int size;
 
     //Constructors
 
@@ -43,10 +44,13 @@ public class Matchfield{
     }
 
     public void setMatchFieldSize(int size){
+        this.size = size;
         this.matchField = new char[size][size];
         this.matchfieldIndex = new int[size];
     }
 
-
+    public int getSize() {
+        return this.size;
+    }
 }
 

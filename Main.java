@@ -8,7 +8,6 @@ public class Main {
         Matchfield matchfield = new Matchfield();
         Ships ships = new Ships();
         Player player = new Player();
-        RandomGenerator random = new RandomGenerator();
         boolean loop = true;
         while (loop) {
             //Welcome screen
@@ -31,12 +30,12 @@ public class Main {
                     matchfield.setMatchFieldSize(scMenu.nextInt());
                     System.out.println();
                     System.out.println("Wieviele Schiffe sollen auf dem Spielfeld generiert werden?");
-                    System.out.println("         Wählen Sie eine Zahl zwischen 1 und " + random.getMaxNumber());
+                    System.out.println("         Wählen Sie eine Zahl zwischen 1 und " + ((matchfield.getSize()* matchfield.getSize()/2)) );
                     //Set number of ships
-                    ships.setNumberOfShips(scMenu.nextInt(), random);
+                    ships.setNumberOfShips(scMenu.nextInt(), matchfield);
                     System.out.println();
                     //Set chosen number of ships randomly in the matchfield
-                    ships.setShips(random);
+                    ships.setShips(matchfield);
                 }
                 case 2 -> {
                     if (matchfield.getMatchfieldIndex() == null){
