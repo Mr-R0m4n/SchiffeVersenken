@@ -8,7 +8,6 @@ public class Player {
     private char indexHorizontal;
     private int indexVertical;
 
-
     //Constructors
     //Methods
     public void insertIndex() {

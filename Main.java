@@ -8,8 +8,9 @@ public class Main {
         Matchfield matchfield = new Matchfield();
         Ships ships = new Ships();
         Player player = new Player();
-        boolean loopGame = true;
-        while (loopGame) {
+        RandomGenerator random = new RandomGenerator();
+        boolean loop = true;
+        while (loop) {
             //Welcome screen
             System.out.println("-----------------------------------------");
             System.out.println("*****WILLKOMMEN ZU SCHIFFE VERSENKEN*****");
@@ -30,12 +31,12 @@ public class Main {
                     matchfield.setMatchFieldSize(scMenu.nextInt());
                     System.out.println();
                     System.out.println("Wieviele Schiffe sollen auf dem Spielfeld generiert werden?");
-                    System.out.println("         Wählen Sie eine Zahl zwischen 1 und " + matchfield.getSize());
+                    System.out.println("         Wählen Sie eine Zahl zwischen 1 und " + random.getMaxNumber());
                     //Set number of ships
-                    ships.setNumberOfShips(scMenu.nextInt(), matchfield);
+                    ships.setNumberOfShips(scMenu.nextInt(), random);
                     System.out.println();
                     //Set chosen number of ships randomly in the matchfield
-                    ships.setShips(matchfield);
+                    ships.setShips(random);
                 }
                 case 2 -> {
                     if (matchfield.getMatchfieldIndex() == null){
@@ -51,13 +52,12 @@ public class Main {
                         matchfield.printMatchfield();
                         System.out.println();
                         player.insertIndex();
-                        ships.compareShipPositionWithInsertIndex(player);
                     }
                 }
                 case 3 -> {
                     System.out.println();
                     System.out.println("Bis zum nächsten mal!");
-                    loopGame = false;
+                    loop = false;
                 }
                 default -> {
                     System.out.println();

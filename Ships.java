@@ -1,8 +1,5 @@
 package SchiffeVersenken;
 
-import java.util.Arrays;
-import java.util.stream.Collectors;
-
 public class Ships {
     //Attributes
     private int numberOfShips;
@@ -10,11 +7,11 @@ public class Ships {
     //Constructors
     //Methods
         //Set ships
-    public void setShips(Matchfield matchfield){
+    public void setShips(RandomGenerator random){
         //Set ship positions
         this.shipPosition = new int[numberOfShips];
         for (int i = 0; i < this.shipPosition.length; i++){
-            this.shipPosition[i] = matchfield.randomNumber();
+            this.shipPosition[i] = random.randomNumber();
         }
 
         //Print ship positions
@@ -26,16 +23,12 @@ public class Ships {
     }
 
     //Getter&Setter
-    public void setNumberOfShips(int numberOfShips, Matchfield matchfield) {
-        if(numberOfShips < 1 || numberOfShips > matchfield.getSize()){
+    public void setNumberOfShips(int numberOfShips, RandomGenerator random) {
+        if(numberOfShips < 1 || numberOfShips > random.getMaxNumber()){
             System.out.println();
             System.out.println("Ungültige Eingabe!");
             System.out.println();
         }
         this.numberOfShips = numberOfShips;
-    }
-
-    public void compareShipPositionWithInsertIndex(Player player){
-
     }
 }
