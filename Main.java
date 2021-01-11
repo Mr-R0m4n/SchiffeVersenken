@@ -56,7 +56,7 @@ public class Main {
                     System.out.println();
                 }
                 case 2 -> {
-                    if (matchfield.getMatchfieldIndex() == null) {
+                    if (matchfield.getMatchfieldIndex() == null || ships.getShipPosition().isEmpty()) {
                         System.out.println();
                         System.out.println("Bitte konfigurieren Sie zuerst das Spiel");
                         System.out.println();
@@ -84,15 +84,19 @@ public class Main {
                         matchfield.printMatchfield();
                         System.out.println();
                         }
+                    if(ships.getShipPosition().isEmpty()) {
                         System.out.println();
                         System.out.println("**************************");
                         System.out.println("***!SIE HABEN GEWONNEN!***");
                         System.out.println("**************************");
                         System.out.println();
-                        System.out.println("Bitte drücken Sie eine beliebeige Taste um das Programm zu schließen");
+                        System.out.println("Bitte geben Sie ein beliebiges Zeichen ein und bestätigen es mit Enter um das Programm zu schließen");
                         String pause = scMenu.next();
                         loop = false;
-
+                    }
+                    else {
+                        System.out.println();
+                    }
                 }
                 case 3 -> {
                     System.out.println();
