@@ -1,5 +1,6 @@
 package SchiffeVersenken;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -73,6 +74,12 @@ public class Main {
                         try {
                             player.insertIndex(matchfield);
                         } catch (PlayerInputException pie) {
+                            System.out.println();
+                            System.out.println("Ihr Eingabe war Ungültig");
+                            System.out.println();
+                            break;
+                        }
+                        catch (InputMismatchException ime){
                             System.out.println();
                             System.out.println("Ihr Eingabe war Ungültig");
                             System.out.println();
