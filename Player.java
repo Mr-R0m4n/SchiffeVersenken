@@ -16,28 +16,21 @@ public class Player {
         System.out.println();
         System.out.println("Bitte geben Sie die Koordinaten für ein Feld ein: ");
         System.out.println("1. Horizontale Koordinate: ");
+        scCoordinates.hasNextInt();
         this.indexHorizontal = scCoordinates.nextInt();
-        if(scCoordinates.hasNextInt()) {
-            if (this.indexHorizontal < 1 || this.indexHorizontal > matchfield.getSize()) {
-                throw new PlayerInputException();
-            }
-        }
-        else{
-            throw new InputMismatchException();
+        if (this.indexHorizontal < 1 || this.indexHorizontal > matchfield.getSize()) {
+            throw new PlayerInputException();
         }
         System.out.println("2. Vertikale Koordinate: ");
         this.indexVertical = scCoordinates.nextInt();
-        if(scCoordinates.hasNextInt()) {
-            if (this.indexVertical < 1 || this.indexVertical > matchfield.getSize()) {
-                throw new PlayerInputException();
-            }
-        else {
-            throw new InputMismatchException();
-            }
+        if (this.indexVertical < 1 || this.indexVertical > matchfield.getSize()) {
+            throw new PlayerInputException();
         }
         this.playerCoordinates = Integer.parseInt(this.indexHorizontal + "" + this.indexVertical);
         System.out.println();
     }
+
+
     //Getter&Setter
     public int getIndexHorizontal() {
         return indexHorizontal;
@@ -47,3 +40,5 @@ public class Player {
         return indexVertical;
     }
 }
+
+

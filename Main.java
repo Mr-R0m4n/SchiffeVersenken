@@ -73,13 +73,7 @@ public class Main {
                         //Insert Index for Field Player except a ship
                         try {
                             player.insertIndex(matchfield);
-                        } catch (PlayerInputException pie) {
-                            System.out.println();
-                            System.out.println("Ihr Eingabe war Ungültig");
-                            System.out.println();
-                            break;
-                        }
-                        catch (InputMismatchException ime){
+                        } catch (PlayerInputException | InputMismatchException e) {
                             System.out.println();
                             System.out.println("Ihr Eingabe war Ungültig");
                             System.out.println();
