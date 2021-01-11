@@ -89,6 +89,8 @@ public class Main {
                         System.out.println("***!SIE HABEN GEWONNEN!***");
                         System.out.println("**************************");
                         System.out.println();
+                        System.out.println("Bitte drücken Sie eine beliebeige Taste um das Programm zu schließen");
+                        String pause = scMenu.next();
                         loop = false;
 
                 }
