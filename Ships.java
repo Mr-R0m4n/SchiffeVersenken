@@ -24,9 +24,9 @@ public class Ships {
                 this.shipPosition.add(c);
             }
         }
-        for (Integer position : this.shipPosition) {
-            System.out.println(position);
-        }
+        /*for (Integer position : this.shipPosition) {
+        //    System.out.println(position);
+        }*/
     }
 
     //Getter&Setter

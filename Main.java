@@ -30,8 +30,10 @@ public class Main {
                         try {
                             matchfield.setMatchFieldSize();
                         } catch (PlayerInputException pie) {
+                            System.out.println();
                             System.out.println("Ihr Eingabe war Ungültig");
-                            System.exit(0);
+                            System.out.println();
+                            break;
                         }
                     System.out.println();
                     System.out.println("Wieviele Schiffe sollen auf dem Spielfeld generiert werden?");
@@ -40,8 +42,10 @@ public class Main {
                         try {
                         ships.setNumberOfShips(matchfield);
                         } catch (PlayerInputException pie) {
+                            System.out.println();
                             System.out.println("Ihr Eingabe war Ungültig");
-                            System.exit(0);
+                            System.out.println();
+                            break;
                         }
                     System.out.println();
                     //Set chosen number of ships randomly in the matchfield
@@ -52,40 +56,41 @@ public class Main {
                     System.out.println();
                 }
                 case 2 -> {
+                    if (matchfield.getMatchfieldIndex() == null) {
+                        System.out.println();
+                        System.out.println("Bitte konfigurieren Sie zuerst das Spiel");
+                        System.out.println();
+                        break;
+                    }
                     //Generate matchfield
                     matchfield.createMatchfield();
                     //Print matchfield
                     matchfield.printMatchfield();
                     //Loop Game till all Ships are hit
-                    while(!ships.getShipPosition().isEmpty()) {
-                        if (matchfield.getMatchfieldIndex() == null) {
+                    while (!ships.getShipPosition().isEmpty()) {
+                        System.out.println();
+                        //Insert Index for Field Player except a ship
+                        try {
+                            player.insertIndex(matchfield);
+                        } catch (PlayerInputException pie) {
                             System.out.println();
-                            System.out.println("Bitte konfigurieren Sie zuerst das Spiel");
+                            System.out.println("Ihr Eingabe war Ungültig");
                             System.out.println();
+                            break;
                         }
-                        else {
-                            System.out.println();
-                            //Insert Index for Field Player except a ship
-                            try {
-                                player.insertIndex(matchfield);
-                            }
-                            catch (PlayerInputException pie) {
-                                System.out.println("Ihr Eingabe war Ungültig");
-                                System.exit(0);
-                            }
-                            //Refresh Matchfield
-                            matchfield.refreshMatchfield(ships, player);
-                            //print matchfield
-                            matchfield.printMatchfield();
-                            System.out.println();
+                        //Refresh Matchfield
+                        matchfield.refreshMatchfield(ships, player);
+                        //print matchfield
+                        matchfield.printMatchfield();
+                        System.out.println();
                         }
-                    }
-                    System.out.println();
-                    System.out.println("**************************");
-                    System.out.println("***!SIE HABEN GEWONNEN!***");
-                    System.out.println("**************************");
-                    System.out.println();
-                    loop = false;
+                        System.out.println();
+                        System.out.println("**************************");
+                        System.out.println("***!SIE HABEN GEWONNEN!***");
+                        System.out.println("**************************");
+                        System.out.println();
+                        loop = false;
+
                 }
                 case 3 -> {
                     System.out.println();
@@ -94,8 +99,7 @@ public class Main {
                 }
                 default -> {
                     System.out.println();
-                    System.out.println("Ungültige Eingabe!");
-                    System.out.println("Bitte versuchen es Erneut!");
+                    System.out.println("Ihr Eingabe war Ungültig");
                     System.out.println();
                 }
             }
